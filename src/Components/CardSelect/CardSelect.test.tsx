@@ -8,4 +8,11 @@ describe("CardSelect", () => {
   it("renders correctly", () => {
     expect(cardSelect).toMatchSnapshot();
   });
+
+  // ImageCard
+  describe("Image", () => {
+    it("renders correctly", () => {
+      expect(cardSelect.find("Image").exists()).toBe(true);
+    });
+  });
 });

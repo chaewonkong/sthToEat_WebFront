@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
+import "../Styles/reset.scss";
 import CardSelect from "./CardSelect";
 
 const App = () => {
