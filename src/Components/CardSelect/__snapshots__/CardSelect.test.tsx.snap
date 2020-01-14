@@ -1,9 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CardSelect renders correctly 1`] = `
-<div>
+<div
+  className="wrapper"
+>
   <Image
-    fluid={false}
+    className="img-card"
+    fluid={true}
     rounded={true}
     roundedCircle={false}
     src="https://images.unsplash.com/photo-1516100882582-96c3a05fe590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
