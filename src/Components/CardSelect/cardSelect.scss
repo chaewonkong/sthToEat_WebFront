@@ -1,13 +1,13 @@
 @import "../../Styles/mixins";
 
 @include desktop {
-  .img-card {
+  .wrapper {
     width: 300px;
   }
 }
 
 @include mobile {
-  .img-card {
+  .wrapper {
     width: 80%;
   }
 }
