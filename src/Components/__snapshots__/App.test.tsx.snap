@@ -8,5 +8,6 @@ exports[`App renders correctly 1`] = `
     SomeThingToIt
   </h1>
   <CardSelect />
+  <ButtonContainer />
 </div>
 `;

@@ -13,4 +13,8 @@ describe("App", () => {
   it("creates CardSelect component", () => {
     expect(app.find("CardSelect").exists()).toBe(true);
   });
+
+  it("creates ButtonContainer component", () => {
+    expect(app.find("ButtonContainer").exists()).toBe(true);
+  });
 });
