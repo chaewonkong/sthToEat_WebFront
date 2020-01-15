@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonContainer renders correctly 1`] = `
+<div
+  className="wrapper"
+>
+  <ButtonGroup
+    aria-label="Basic example"
+    role="group"
+    toggle={false}
+    vertical={false}
+  >
+    <Button
+      active={false}
+      disabled={false}
+      type="button"
+      variant="danger"
+    >
+      DISLIKE
+    </Button>
+    <Button
+      active={false}
+      disabled={false}
+      type="button"
+      variant="primary"
+    >
+      LIKE
+    </Button>
+  </ButtonGroup>
+</div>
+`;
