@@ -1,18 +1,14 @@
 import * as constants from "./constants";
+import { IDishPayload } from "../shared-interfaces";
 
-interface IPayload {
-  imgUrl: string;
-  title: string;
-}
-
-export function likeDish(payload: IPayload) {
+export function likeDish(payload: IDishPayload) {
   return {
     type: constants.LIKE_DISH,
     payload
   };
 }
 
-export function dislikeDish(payload: IPayload) {
+export function dislikeDish(payload: IDishPayload) {
   return {
     type: constants.DISLIKE_DISH,
     payload
