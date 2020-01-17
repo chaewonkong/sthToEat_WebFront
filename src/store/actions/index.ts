@@ -1,21 +1,4 @@
-export const LIKE_DISH = "LIKE_DISH";
-export const DISLIKE_DISH = "DISLIKE_DISH";
+import * as constants from "./constants";
+import * as actions from "./dish";
 
-interface IPayload {
-  imgUrl: string;
-  title: string;
-}
-
-export function likeDish(payload: IPayload) {
-  return {
-    type: LIKE_DISH,
-    payload
-  };
-}
-
-export function dislikeDish(payload: IPayload) {
-  return {
-    type: DISLIKE_DISH,
-    payload
-  };
-}
+export default actions;
