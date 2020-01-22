@@ -1,20 +1,15 @@
 import { put, takeLatest, all } from "redux-saga/effects";
-import { DishAction } from "../actions/dish";
+import { Api } from "../../Api";
 import * as constants from "../actions/constants";
-import { IDishPayload } from "../shared-interfaces";
 
 export function* likeDishAsync() {
-  // const products = yield api.fetch('/products')
-  yield put({ type: constants.LIKE_DISH_ASYNC, payload: {} });
+  const res = yield Api.postLikeDish();
+  yield put({ type: constants.LIKE_DISH_ASYNC, payload: { res } });
 }
 
 export function* dislikeDishAsync() {
-  // const products = yield api.fetch('/products')
-  yield put({ type: constants.DISLIKE_DISH_ASYNC, payload: {} });
-}
-
-function* a() {
-  yield put({ type: "", value: 1 });
+  const res = yield Api.postDislikeDish();
+  yield put({ type: constants.DISLIKE_DISH_ASYNC, payload: { res } });
 }
 
 function* watchLikeDish() {
