@@ -14,3 +14,7 @@ export function dislikeDish(payload: IDishPayload) {
     payload
   };
 }
+
+export type DishAction =
+  | ReturnType<typeof likeDish>
+  | ReturnType<typeof dislikeDish>;

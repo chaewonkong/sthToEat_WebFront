@@ -6,7 +6,7 @@ describe("dishReducer", () => {
     const payload = { title: "마라탕", imgUrl: "img" };
 
     expect(
-      dishReducer(undefined, { type: constants.LIKE_DISH, payload })
+      dishReducer(undefined, { type: constants.LIKE_DISH_ASYNC, payload })
     ).toEqual({ dislikeList: [], likeList: [payload] });
   });
 });

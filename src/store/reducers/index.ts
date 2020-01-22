@@ -7,9 +7,9 @@ const INITIAL_STATE = { likeList: [], dislikeList: [] };
 
 const dishReducer = (state = INITIAL_STATE, action: IDishAction) => {
   switch (action.type) {
-    case constants.LIKE_DISH:
+    case constants.LIKE_DISH_ASYNC:
       return { ...state, likeList: [...state.likeList, action.payload] };
-    case constants.DISLIKE_DISH:
+    case constants.DISLIKE_DISH_ASYNC:
       return { ...state, dislikeList: [...state.dislikeList, action.payload] };
     default:
       return state;
