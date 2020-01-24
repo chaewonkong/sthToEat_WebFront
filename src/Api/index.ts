@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "";
+export const baseURL = "http://localhost:3004/graphql";
 
 const baseApi = axios.create({
   baseURL,
