@@ -1,6 +1,22 @@
-import { put, takeLatest, all } from "redux-saga/effects";
+import { put, takeLatest, all, takeEvery } from "redux-saga/effects";
 import { Api } from "../../Api";
 import * as constants from "../actions/constants";
+import { baseURL } from "../../Api";
+import { request } from "graphql-request";
+
+const query = `
+      query {
+       foods {
+          name
+          imgUrl
+        }
+      }
+  `;
+
+export function* getAllDishesAsync() {
+  const res = yield request(baseURL, query);
+  yield put({ type: constants.GET_DISHES_ASYNC, payload: res.foods });
+}
 
 export function* likeDishAsync() {
   const res = yield Api.postLikeDish();
@@ -12,6 +28,11 @@ export function* dislikeDishAsync() {
   yield put({ type: constants.DISLIKE_DISH_ASYNC, payload: { res } });
 }
 
+// Watch Functions
+function* watchGetAllDishes() {
+  yield takeLatest(constants.GET_DISHES, getAllDishesAsync);
+}
+
 function* watchLikeDish() {
   yield takeLatest(constants.LIKE_DISH, likeDishAsync);
 }
@@ -21,5 +42,5 @@ function* watchDislikeDish() {
 }
 
 export default function* rootSaga() {
-  yield all([watchLikeDish(), watchDislikeDish()]);
+  yield all([watchLikeDish(), watchDislikeDish(), watchGetAllDishes()]);
 }
